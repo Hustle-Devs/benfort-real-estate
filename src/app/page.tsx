@@ -6,8 +6,8 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center">
       {/* Hero Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-background">
-        <div className="container mx-auto px-4 md:px-6">
+      <section className="bg-background py-12 md:py-24 lg:py-32 xl:py-48 w-full">
+        <div className="mx-auto px-4 md:px-6 container">
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
               <h1 className="heading-style">Welcome to HustleArticles</h1>
@@ -20,7 +20,7 @@ export default function Home() {
               <Link href="/blog">
                 <Button>
                   Read Our Blog
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </Link>
             </div>
@@ -29,28 +29,28 @@ export default function Home() {
       </section>
 
       {/* Featured Posts */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/50">
-        <div className="container mx-auto px-4 md:px-6">
+      <section className="bg-muted/50 py-12 md:py-24 lg:py-32 w-full">
+        <div className="mx-auto px-4 md:px-6 container">
           <h2 className="featured-title">Featured Posts</h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="gap-6 grid sm:grid-cols-2 lg:grid-cols-3">
             {[1, 2, 3].map((i) => (
               <div
                 key={i}
-                className="group relative rounded-lg border bg-background p-6 shadow-md transition-shadow hover:shadow-lg"
+                className="group relative bg-background shadow-md hover:shadow-lg p-6 border rounded-lg transition-shadow"
               >
-                <h3 className="text-xl font-bold mb-2">
+                <h3 className="mb-2 font-bold text-xl">
                   Featured Post Title {i}
                 </h3>
-                <p className="text-muted-foreground mb-4">
+                <p className="mb-4 text-muted-foreground">
                   A brief description of the featured post that gives readers an
                   idea of what to expect...
                 </p>
                 <Link
                   href={`/blog/post-${i}`}
-                  className="text-primary hover:underline inline-flex items-center"
+                  className="inline-flex items-center text-primary hover:underline"
                 >
                   Read More
-                  <ArrowRight className="ml-1 h-4 w-4" />
+                  <ArrowRight className="ml-1 w-4 h-4" />
                 </Link>
               </div>
             ))}

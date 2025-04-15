@@ -1,78 +1,129 @@
 "use client";
+
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "../ui/button";
-import { MoonIcon, SunIcon } from "lucide-react";
+import { MoonIcon, SunIcon, MenuIcon, XIcon } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 
 const navigation = [
-  {
-    name: "Home",
-    href: "/",
-  },
-  {
-    name: "About",
-    href: "/about",
-  },
-  {
-    name: "Portfolio",
-    href: "/portfolio",
-  },
-  {
-    name: "Contact",
-    href: "/contact",
-  },
-  {
-    name: "Articles",
-    href: "/articles",
-  },
+  { name: "Properties", href: "/" },
+  { name: "Search", href: "/Search" },
+  { name: "Agent", href: "/Agent" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
-
   const { theme, setTheme } = useTheme();
-
-  console.log(theme);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <nav className="max-w-custom mx-auto flex h-16 items-center">
-        <div className="mr-8">
-          <Link href={"/"} className="text-2xl font-bold">
-            Hustle Articles
+    <header className="top-0 z-50 sticky container">
+      <nav className="flex justify-between items-center mx-auto h-[89px]">
+        {/* Logo */}
+        <div>
+          <Link href="/">
+            <p className="font-bricolage text-[32px]">Bentfort</p>
           </Link>
         </div>
-        <div className="flex flex-1 items-center justify-between">
-          <div className="flex items-center space-x-6">
+
+        {/* Desktop Nav Links */}
+        <div className="hidden md:flex items-center space-x-8">
+          {navigation.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className={cn(
+                "nav transition-colors hover:text-primary text-foreground"
+              )}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
+
+        {/* Desktop Buttons */}
+        <div className="hidden md:flex items-center space-x-2">
+          <Link
+            href="/signup"
+            className="bg-foreground rounded-md text-background btn"
+          >
+            Sign Up
+          </Link>
+          <Link href="/login" className="border border-foreground btn">
+            Log In
+          </Link>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          >
+            <SunIcon className="w-5 h-5 rotate-0 dark:-rotate-90 scale-100 dark:scale-0 transition-all" />
+            <MoonIcon className="absolute w-5 h-5 rotate-90 dark:rotate-0 scale-0 dark:scale-100 transition-all" />
+            <span className="sr-only">Toggle theme</span>
+          </Button>
+        </div>
+
+        {/* Mobile Menu Toggle */}
+        <button
+          className="md:hidden text-foreground"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          {isMenuOpen ? (
+            <XIcon className="w-6 h-6" />
+          ) : (
+            <MenuIcon className="w-6 h-6" />
+          )}
+        </button>
+      </nav>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-background px-4 py-3 border-t">
+          <div className="flex flex-col space-y-2">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary",
-                  pathname === item.href
-                    ? "text-foreground"
-                    : "text-foreground/60"
-                )}
+                className="py-2 text-foreground perks-p2"
+                onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
+            <Link
+              href="/signup"
+              className="bg-foreground text-background text-center btn"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Sign Up
+            </Link>
+            <Link
+              href="/login"
+              className="border border-foreground text-center btn"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Log In
+            </Link>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="self-start"
+              onClick={() => {
+                setTheme(theme === "dark" ? "light" : "dark");
+                setIsMenuOpen(false);
+              }}
+            >
+              <SunIcon className="w-5 h-5 rotate-0 dark:-rotate-90 scale-100 dark:scale-0 transition-all" />
+              <MoonIcon className="absolute w-5 h-5 rotate-90 dark:rotate-0 scale-0 dark:scale-100 transition-all" />
+              <span className="sr-only">Toggle theme</span>
+            </Button>
           </div>
         </div>
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-        >
-          <SunIcon className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <MoonIcon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
-      </nav>
+      )}
     </header>
   );
 }
