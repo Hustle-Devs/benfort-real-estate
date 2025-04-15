@@ -1,11 +1,11 @@
 import Image from "next/image";
 import React from "react";
-import dream1 from "../../../public/explore/dreem1.svg";
-import dream2 from "../../../public/explore/dream2.svg";
-import dream3 from "../../../public/explore/dream3.svg";
-import dream4 from "../../../public/explore/dream4.svg";
-import dreamhouseimage from "../../../public/explore/dreamhouseimage.png";
-import Background from "../../../public/explore/Background.png";
+import dream1 from "@/../public/explore/dreem1.svg";
+import dream2 from "@/../public/explore/dream2.svg";
+import dream3 from "@/../public/explore/dream3.svg";
+import dream4 from "@/../public/explore/dream4.svg";
+import dreamhouseimage from "@/../public/explore/dreamhouseimage.png";
+import Background from "@/../public/explore/Background.png";
 
 const Explore = () => {
   return (

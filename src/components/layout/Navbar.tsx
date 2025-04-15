@@ -4,10 +4,8 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { Button } from "../ui/button";
 import { MoonIcon, SunIcon, MenuIcon, XIcon } from "lucide-react";
-import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
-import Image from "next/image";
 
 const navigation = [
   { name: "Properties", href: "/" },
@@ -16,12 +14,11 @@ const navigation = [
 ];
 
 export default function Navbar() {
-  const pathname = usePathname();
   const { theme, setTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="top-0 z-50 sticky container">
+    <header className="top-0 z-50 sticky custom-container">
       <nav className="flex justify-between items-center mx-auto h-[89px]">
         {/* Logo */}
         <div>
