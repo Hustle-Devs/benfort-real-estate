@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Footer: FC = () => {
   return (
-    <footer className="bg-foreground px-8 md:px-0 pt-20 pb-8 text-background">
+    <footer className="bg-foreground dark:bg-black px-8 md:px-0 pt-20 pb-8 text-background dark:text-white">
       <section className="mx-auto container">
         <div className="flex lg:flex-row flex-col justify-between items-start gap-12 mx-auto text-start">
           {/* ************ */}
@@ -123,7 +123,7 @@ const Footer: FC = () => {
         </div>
 
         {/* Bottom Line */}
-        <div className="flex md:flex-row flex-col justify-between items-center bg-[url('/footerBg.png')] bg-contain bg-no-repeat bg-center mt-12 pt-[400px] pb-20 text-background p4">
+        <div className="flex md:flex-row flex-col justify-between items-center bg-[url('/footerBg.png')] bg-contain bg-no-repeat bg-center mt-12 pt-[400px] pb-20 text-background dark:text-white p4">
           <div className="flex flex-wrap justify-center md:justify-start gap-4">
             <Link href="#" className="hover:text-primary">
               Privacy Policy
