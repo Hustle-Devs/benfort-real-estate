@@ -62,7 +62,7 @@ const Explore = () => {
             </div>
           </div>
           {/* text */}
-          <div className="bg-[#fff8f4] mt-12 sm:mt-0 p-3 sm:p-4 lg:p-6 rounded-[12px] lg:rounded-[16px] max-w-full sm:max-w-[429px] content shrink-2">
+          <div className="bg-card mt-12 sm:mt-0 p-3 sm:p-4 lg:p-6 rounded-[12px] lg:rounded-[16px] max-w-full sm:max-w-[429px] content shrink-2">
             <p className="mb-16 sm:mb-20 lg:mb-22 font-normal text-[16px] leading-[22px] sm:leading-[24px]">
               “We believe there&#39;s a perfect home for everybody, no matter
               the budget. That&#39;s why we always find the best homes for your
@@ -88,19 +88,19 @@ const Explore = () => {
             </div>
             <ul className="flex flex-col gap-1 sm:gap-2 my-4 md:my-6">
               <li className="flex items-center gap-1.5 sm:gap-2.5">
-                <span className="inline-block bg-[#191a20] rounded-full w-[10px] h-[10px]"></span>
+                <span className="inline-block rounded-full w-[10px] h-[10px] bg-text-foreground"></span>
                 Over 100k+ property & update regularly
               </li>
               <li className="flex items-center gap-1.5 sm:gap-2.5">
-                <span className="inline-block bg-[#191a20] rounded-full w-[10px] h-[10px]"></span>
+                <span className="inline-block rounded-full w-[10px] h-[10px] bg-text-foreground"></span>
                 Expert agent consultation
               </li>
               <li className="flex items-center gap-1.5 sm:gap-2.5">
-                <span className="inline-block bg-[#191a20] rounded-full w-[10px] h-[10px]"></span>
+                <span className="inline-block rounded-full w-[10px] h-[10px] bg-text-foreground"></span>
                 Loan & low Interest facility
               </li>
             </ul>
-            <button className="bg-[#191a20] px-2 md:px-3 py-1 md:py-2 rounded-[4px] font-normal text-[14px] text-white leading-[19px] sm:leading-[21px] cursor-pointer">
+            <button className="bg-foreground rounded-md text-background btn">
               Browse Listings
             </button>
           </div>

@@ -18,12 +18,14 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="top-0 z-50 sticky custom-container">
+    <header className="top-0 z-50 sticky bg-background mx-auto px-8 md:px-0 container">
       <nav className="flex justify-between items-center mx-auto h-[89px]">
         {/* Logo */}
         <div>
           <Link href="/">
-            <p className="font-bricolage text-[32px]">Bentfort</p>
+            <p className="font-bricolage text-[32px] cursor-pointer">
+              Bentfort
+            </p>
           </Link>
         </div>
 
@@ -46,11 +48,14 @@ export default function Navbar() {
         <div className="hidden md:flex items-center space-x-2">
           <Link
             href="/signup"
-            className="bg-foreground rounded-md text-background btn"
+            className="bg-foreground rounded-md text-background hover:text-primary btn"
           >
             Sign Up
           </Link>
-          <Link href="/login" className="border border-foreground btn">
+          <Link
+            href="/login"
+            className="border border-foreground hover:text-primary btn"
+          >
             Log In
           </Link>
           <Button
@@ -85,7 +90,7 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="py-2 text-foreground perks-p2"
+                className="py-2 text-foreground hover:text-primary perks-p2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
@@ -93,14 +98,14 @@ export default function Navbar() {
             ))}
             <Link
               href="/signup"
-              className="bg-foreground text-background text-center btn"
+              className="bg-foreground text-background hover:text-primary text-center btn"
               onClick={() => setIsMenuOpen(false)}
             >
               Sign Up
             </Link>
             <Link
               href="/login"
-              className="border border-foreground text-center btn"
+              className="border border-foreground hover:text-primary text-center btn"
               onClick={() => setIsMenuOpen(false)}
             >
               Log In
