@@ -52,7 +52,7 @@ const Explore = () => {
                     </div>
                   </div>
                   <h6 className="mt-1 sm:mt-2 font-normal text-[14px] text-center leading-[19px] sm:leading-[21px]">
-                    200+ Happy Client
+                    300+ Happy Client
                   </h6>
                 </div>
               </div>
