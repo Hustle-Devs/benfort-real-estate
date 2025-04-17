@@ -119,7 +119,7 @@ const Footer: FC = () => {
         </div>
 
         {/* Bottom Line */}
-        <div className="flex md:flex-row flex-col justify-between items-center bg-[url('/footerBg.png')] bg-contain bg-no-repeat bg-center mt-12 pt-[400px] pb-20 text-background dark:text-foreground p4">
+        <div className="flex md:flex-row flex-col justify-between items-center bg-[url('/footerBg.png')] bg-contain bg-no-repeat bg-center mt-12 pt-4 md:pt-[400px] pb-20 text-background dark:text-foreground p4">
           <div className="flex flex-wrap justify-center md:justify-start gap-4">
             <Link href="#" className="hover:text-primary">
               Privacy Policy
