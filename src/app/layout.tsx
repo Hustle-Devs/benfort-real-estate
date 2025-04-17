@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-// import { Bricolage, Lexend } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
