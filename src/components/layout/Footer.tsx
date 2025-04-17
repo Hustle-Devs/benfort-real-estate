@@ -112,9 +112,12 @@ const Footer: FC = () => {
 
           {/* Book A Call */}
           <div className="mt-6 lg:mt-0">
-            <button className="border hover:border-primary dark:border-foreground dark:hover:border-primary border-background hover:text-primary transition btn">
+            <Link
+              href="/"
+              className="border hover:border-primary dark:border-foreground dark:hover:border-primary border-background hover:text-primary transition btn"
+            >
               Book A Call
-            </button>
+            </Link>
           </div>
         </div>
 

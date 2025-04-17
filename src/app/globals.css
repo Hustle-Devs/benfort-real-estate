@@ -130,7 +130,9 @@
   }
   h1,
   h2,
-  h3 {
+  h3,
+  h5,
+  h6 {
     @apply font-bricolage;
   }
 }
@@ -157,6 +159,9 @@
   .btn {
     @apply px-3 py-[10px] rounded-md font-normal text-base leading-6;
   }
+  .btn2 {
+    @apply px-8 py-[10px] rounded-sm font-normal text-base leading-6;
+  }
 }
 
 @layer components {
@@ -182,9 +187,5 @@
   }
   .Get-in {
     @apply font-medium text-[128px] leading-[153px];
-  }
-
-  .custom-container {
-    @apply mx-auto max-w-custom;
   }
 }
