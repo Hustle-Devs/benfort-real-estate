@@ -100,7 +100,7 @@ const Explore = () => {
                 Loan & low Interest facility
               </li>
             </ul>
-            <button className="bg-foreground rounded-md text-background btn">
+            <button className="bg-foreground hover:bg-primary rounded-md text-background dark:hover:text-foreground btn">
               Browse Listings
             </button>
           </div>

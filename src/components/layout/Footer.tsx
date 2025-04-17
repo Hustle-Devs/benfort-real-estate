@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Footer: FC = () => {
   return (
-    <footer className="bg-foreground dark:bg-background px-8 md:px-0 pt-20 pb-8 text-background dark:text-foreground">
+    <footer className="bg-foreground dark:bg-[#191a20] px-8 md:px-0 pt-20 pb-8 text-background dark:text-foreground">
       <section className="mx-auto container">
         <div className="flex lg:flex-row flex-col justify-between items-start gap-12 mx-auto text-start">
           {/* ************ */}
@@ -43,7 +43,7 @@ const Footer: FC = () => {
               </div>
               <div>
                 <h4 className="pt-8 pb-4 hover:text-primary h4">Benfort</h4>
-                <p className="text-background hover:text-primary p5">
+                <p className="hover:text-primary p5">
                   264 Brixton New Avenue.
                   <br />
                   Kansas, KS 83902
@@ -53,7 +53,7 @@ const Footer: FC = () => {
 
             {/* Categories */}
             <div className="min-w-[150px]">
-              <h3 className="mb-3 text-background hover:text-primary uppercase h3">
+              <h3 className="mb-3 hover:text-primary uppercase h3">
                 Categories
               </h3>
               <ul className="space-y-4">
@@ -77,9 +77,7 @@ const Footer: FC = () => {
 
             {/* More */}
             <div className="min-w-[150px]">
-              <h3 className="mb-3 text-background hover:text-primary uppercase h3">
-                More
-              </h3>
+              <h3 className="mb-3 hover:text-primary uppercase h3">More</h3>
               <ul className="space-y-4">
                 <li>
                   <Link href="#" className="hover:text-primary p5">
@@ -96,9 +94,7 @@ const Footer: FC = () => {
 
             {/* Account */}
             <div className="min-w-[150px]">
-              <h3 className="mb-3 text-background hover:text-primary uppercase h3">
-                Account
-              </h3>
+              <h3 className="mb-3 hover:text-primary uppercase h3">Account</h3>
               <ul className="space-y-4">
                 <li>
                   <Link href="#" className="hover:text-primary p5">
@@ -116,7 +112,7 @@ const Footer: FC = () => {
 
           {/* Book A Call */}
           <div className="mt-6 lg:mt-0">
-            <button className="border border-background hover:text-primary transition btn">
+            <button className="border hover:border-primary dark:border-foreground dark:hover:border-primary border-background hover:text-primary transition btn">
               Book A Call
             </button>
           </div>
