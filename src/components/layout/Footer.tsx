@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Footer: FC = () => {
   return (
-    <footer className="bg-foreground dark:bg-[#191a20] px-8 md:px-0 pt-20 pb-8 text-background dark:text-foreground">
+    <footer className="bg-foreground dark:bg-[#191a20] px-8 pt-20 pb-8 text-background dark:text-foreground">
       <section className="mx-auto container">
         <div className="flex lg:flex-row flex-col justify-between items-start gap-12 mx-auto text-start">
           {/* ************ */}
