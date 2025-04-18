@@ -11,58 +11,49 @@ const Explore = () => {
   return (
     <div className="py-16 sm:py-20 md:py-24 lg:py-30">
       <div className="mx-auto px-4 max-w-[1232px]">
-        {/* mobile heading */}
-        <h2 className="md:hidden block mb-4 font-medium text-[26px] text-foreground sm:text-[32px] lg:text-[40px] text-center md:text-start leading-[40px] sm:leading-[46px] lg:leading-[48px] tracking-[-1px] sm:tracking-[-2px]">
-          Explore & Find <br className="hidden md:block" /> your{" "}
-          <br className="md:hidden" />
-          <span className="text-primary-foreground">
-            Dream
-            <br className="hidden md:block" /> home
-          </span>
-        </h2>
-        <div className="flex sm:flex-row flex-col justify-between gap-2.5 mx-auto max-w-[1088px]">
-          <div className="flex md:flex-row flex-col justify-between gap-2 dreamImage">
+        <div className="flex lg:flex-row flex-col justify-between gap-2.5 mx-auto max-w-[1088px]">
+          <div className="flex sm:flex-row flex-col justify-between gap-2 mx-auto max-w-fit dreamImage">
             <div className="dreamHeadingr">
-              <h2 className="hidden md:block mb-4 font-medium text-[26px] text-foreground sm:text-[32px] lg:text-[40px] leading-[40px] sm:leading-[46px] lg:leading-[48px] tracking-[-1px] sm:tracking-[-2px]">
-                Explore & Find <br className="hidden lg:block" /> your{" "}
-                <span className="text-primary-foreground">
+              <h2 className="mb-4 font-medium text-[26px] text-foreground sm:text-[32px] lg:text-[40px] leading-[40px] sm:leading-[46px] lg:leading-[48px] tracking-[-1px] sm:tracking-[-2px]">
+                Explore & Find <br className="" /> your{" "}
+                <span className="text-primary">
                   Dream
-                  <br className="hidden md:block" /> home
+                  <br className="hidden sm:block" /> home
                 </span>
               </h2>
-              <div className="relative mx-auto w-fit">
+              <div className="relative w-fit">
                 <Image
                   src={dreamhouseimage}
                   alt="dreamhouseimage"
                   className=""
                 />
-                <div className="top-full left-0 absolute bg-background px-[19px] py-3 rounded-[8px] sm:rounded-[16px] -translate-y-1/2">
+                <div className="top-full left-0 absolute bg-card px-[19px] py-3 rounded-[8px] sm:rounded-[16px] -translate-y-1/2">
                   <div className="flex">
-                    <div className="bg-white/5 shadow-[0px_8px_12px_rgba(0,0,0,0.08)] border-[#fff] border-[2px] rounded-full w-fit">
+                    <div className="shadow-[0px_8px_12px_rgba(0,0,0,0.08)] border-[2px] border-white rounded-full w-fit">
                       <Image src={dream1} alt="dream1" />
                     </div>
-                    <div className="bg-white/5 shadow-[0px_8px_12px_rgba(0,0,0,0.08)] border-[#fff] border-[2px] rounded-full w-fit">
+                    <div className="shadow-[0px_8px_12px_rgba(0,0,0,0.08)] border-[2px] border-white rounded-full w-fit">
                       <Image src={dream2} alt="dream2" />
                     </div>
-                    <div className="bg-white/5 shadow-[0px_8px_12px_rgba(0,0,0,0.08)] border-[#fff] border-[2px] rounded-full w-fit">
+                    <div className="shadow-[0px_8px_12px_rgba(0,0,0,0.08)] border-[2px] border-white rounded-full w-fit">
                       <Image src={dream3} alt="dream3" />
                     </div>
-                    <div className="bg-white/5 shadow-[0px_8px_12px_rgba(0,0,0,0.08)] border-[#fff] border-[2px] rounded-full w-fit">
+                    <div className="shadow-[0px_8px_12px_rgba(0,0,0,0.08)] border-[2px] border-white rounded-full w-fit">
                       <Image src={dream4} alt="dream4" />
                     </div>
                   </div>
                   <h6 className="mt-1 sm:mt-2 font-normal text-[14px] text-center leading-[19px] sm:leading-[21px]">
-                    200+ Happy Client
+                    300+ Happy Client
                   </h6>
                 </div>
               </div>
             </div>
-            <div className="mx-auto dreamImage">
+            <div className="dreamImage">
               <Image src={Background} alt="Background" className="" />
             </div>
           </div>
           {/* text */}
-          <div className="bg-card mt-12 sm:mt-0 p-3 sm:p-4 lg:p-6 rounded-[12px] lg:rounded-[16px] max-w-full sm:max-w-[429px] content shrink-2">
+          <div className="bg-card mx-auto sm:mt-12 lg:mt-0 p-3 sm:p-4 lg:p-6 rounded-[12px] lg:rounded-[16px] max-w-[520px] sm:max-w-[644px] lg:max-w-[429px] content shrink-3">
             <p className="mb-16 sm:mb-20 lg:mb-22 font-normal text-[16px] leading-[22px] sm:leading-[24px]">
               “We believe there&#39;s a perfect home for everybody, no matter
               the budget. That&#39;s why we always find the best homes for your
@@ -88,19 +79,19 @@ const Explore = () => {
             </div>
             <ul className="flex flex-col gap-1 sm:gap-2 my-4 md:my-6">
               <li className="flex items-center gap-1.5 sm:gap-2.5">
-                <span className="inline-block rounded-full w-[10px] h-[10px] bg-text-foreground"></span>
+                <span className="inline-block bg-foreground rounded-full w-[10px] h-[10px]"></span>
                 Over 100k+ property & update regularly
               </li>
               <li className="flex items-center gap-1.5 sm:gap-2.5">
-                <span className="inline-block rounded-full w-[10px] h-[10px] bg-text-foreground"></span>
+                <span className="inline-block bg-foreground rounded-full w-[10px] h-[10px]"></span>
                 Expert agent consultation
               </li>
               <li className="flex items-center gap-1.5 sm:gap-2.5">
-                <span className="inline-block rounded-full w-[10px] h-[10px] bg-text-foreground"></span>
+                <span className="inline-block bg-foreground rounded-full w-[10px] h-[10px]"></span>
                 Loan & low Interest facility
               </li>
             </ul>
-            <button className="bg-foreground hover:bg-primary rounded-md text-background dark:hover:text-foreground btn">
+            <button className="bg-foreground hover:bg-primary rounded-md text-background dark:hover:text-foreground cursor-pointer btn">
               Browse Listings
             </button>
           </div>
