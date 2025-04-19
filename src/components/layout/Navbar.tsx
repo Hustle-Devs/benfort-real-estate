@@ -18,27 +18,21 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="top-0 z-50 sticky bg-background dark:bg-[#191a20] px-8 md:px-0">
+    <header className="top-0 z-50 sticky bg-background dark:bg-card">
       <section className="mx-auto container">
-        <nav className="flex justify-between items-center mx-auto h-[89px]">
+        <nav className="flex justify-between items-center px-4 h-[89px]">
           {/* Logo */}
-          <div>
-            <Link href="/">
-              <p className="font-bricolage text-[32px] cursor-pointer">
-                Bentfort
-              </p>
-            </Link>
-          </div>
+          <Link href="/" className="font-bricolage text-[32px] cursor-pointer">
+            Bentfort
+          </Link>
 
-          {/* Desktop Nav Links */}
+          {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={cn(
-                  "nav transition-colors hover:text-primary text-foreground"
-                )}
+                className="text-foreground hover:text-primary transition-colors nav"
               >
                 {item.name}
               </Link>
@@ -70,64 +64,80 @@ export default function Navbar() {
             </Button>
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <button
+          {/* Mobile Hamburger */}
+          <Button
             className="md:hidden text-foreground"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={() => setIsMenuOpen(true)}
           >
-            {isMenuOpen ? (
-              <XIcon className="w-6 h-6" />
-            ) : (
-              <MenuIcon className="w-6 h-6" />
-            )}
-          </button>
+            <MenuIcon className="w-6 h-6" />
+          </Button>
         </nav>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-background px-4 py-3 border-t">
-            <div className="flex flex-col space-y-2">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="py-2 text-foreground hover:text-primary perks-p2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <Link
-                href="/signup"
-                className="bg-foreground hover:bg-primary rounded-md text-background dark:hover:text-foreground btn"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Sign Up
-              </Link>
-              <Link
-                href="/login"
-                className="border border-foreground hover:border-primary hover:text-primary btn"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Log In
-              </Link>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="self-start"
-                onClick={() => {
-                  setTheme(theme === "dark" ? "light" : "dark");
-                  setIsMenuOpen(false);
-                }}
-              >
-                <SunIcon className="w-5 h-5 rotate-0 dark:-rotate-90 scale-100 dark:scale-0 transition-all" />
-                <MoonIcon className="absolute w-5 h-5 rotate-90 dark:rotate-0 scale-0 dark:scale-100 transition-all" />
-                <span className="sr-only">Toggle theme</span>
-              </Button>
-            </div>
-          </div>
-        )}
       </section>
+
+      {/* Slide-in Sidebar Menu */}
+      <div
+        className={cn(
+          "fixed inset-0 z-50 bg-black/40 backdrop-blur-sm transition-opacity duration-300",
+          isMenuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        )}
+        onClick={() => setIsMenuOpen(false)}
+      />
+
+      <div
+        className={cn(
+          "fixed top-0 right-0 h-full w-64 bg-background shadow-lg z-[999] transform transition-transform duration-300 ease-in-out",
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
+        )}
+      >
+        <div className="flex justify-between items-center p-4 border-b">
+          <p className="font-bricolage text-xl">Menu</p>
+          <Button onClick={() => setIsMenuOpen(false)}>
+            <XIcon className="w-5 h-5" />
+          </Button>
+        </div>
+        <div className="flex flex-col space-y-4 px-4 py-6">
+          {navigation.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="text-foreground hover:text-primary text-base"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {item.name}
+            </Link>
+          ))}
+
+          <Link
+            href="/signup"
+            className="bg-foreground hover:bg-primary px-4 py-2 rounded-md text-background"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Sign Up
+          </Link>
+          <Link
+            href="/login"
+            className="px-4 py-2 border border-foreground hover:border-primary rounded-md hover:text-primary"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Log In
+          </Link>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="self-start"
+            onClick={() => {
+              setTheme(theme === "dark" ? "light" : "dark");
+              setIsMenuOpen(false);
+            }}
+          >
+            <SunIcon className="w-5 h-5 rotate-0 dark:-rotate-90 scale-100 dark:scale-0 transition-all" />
+            <MoonIcon className="absolute w-5 h-5 rotate-90 dark:rotate-0 scale-0 dark:scale-100 transition-all" />
+            <span className="sr-only">Toggle theme</span>
+          </Button>
+        </div>
+      </div>
     </header>
   );
 }
