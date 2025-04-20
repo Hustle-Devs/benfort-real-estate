@@ -1,4 +1,5 @@
 import Explore from "@/components/home/explore-section/Explore";
+import GetMore from "@/components/home/get-more/GetMore";
 import Hero from "@/components/home/hero/Hero";
 import Listing from "@/components/home/listing/Listing";
 import Perks from "@/components/home/perks/Perks";
@@ -10,6 +11,7 @@ export default function Home() {
       <Perks />
       <Explore />
       <Listing />
+      <GetMore />
     </>
   );
 }
