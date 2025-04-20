@@ -142,7 +142,7 @@
     @apply font-medium lg:text-[81px] text-5xl md:text-6xl leading-[81px];
   }
   h2 {
-    @apply font-medium md:text-[40px] text-3xl leading-12;
+    @apply font-medium text-[28px] md:text-[40px] leading-12;
   }
   .h3 {
     @apply font-semibold text-sm leading-[21px];
