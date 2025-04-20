@@ -1,7 +1,7 @@
 import React from "react";
 import { Cards } from "./Cards";
 
-export const Listing = () => {
+const Listing = () => {
   return (
     <section className="py-16 sm:py-20 md:py-24 lg:py-30">
       <div className="mx-auto px-4 max-w-[1232px]">
@@ -20,3 +20,5 @@ export const Listing = () => {
     </section>
   );
 };
+
+export default Listing;
