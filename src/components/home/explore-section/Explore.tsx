@@ -9,12 +9,15 @@ import Background from "@/../public/explore/Background.png";
 
 const Explore = () => {
   return (
-    <div className="py-16 sm:py-20 md:py-24 lg:py-30">
+    <section className="py-16 md:py-20 lg:py-24 xl:py-30">
       <div className="mx-auto px-4 max-w-[1232px]">
-        <div className="flex lg:flex-row flex-col justify-between gap-2.5 mx-auto max-w-[1088px]">
-          <div className="flex sm:flex-row flex-col justify-between gap-2 mx-auto max-w-fit dreamImage">
+        <h2 className="md:hidden block mx-auto mb-4 max-w-[300px] text-center md:text-start leading-[40px] sm:leading-[46px] lg:leading-[48px] tracking-[-1px] sm:tracking-[-2px]">
+          Explore & Find your <span className="text-primary">Dream home</span>
+        </h2>
+        <div className="flex sm:flex-row flex-col justify-between gap-2.5 mx-auto max-w-[1088px]">
+          <div className="flex md:flex-row flex-col justify-between gap-2 mx-auto max-w-fit">
             <div className="dreamHeadingr">
-              <h2 className="mb-4 font-medium text-[26px] text-foreground sm:text-[32px] lg:text-[40px] leading-[40px] sm:leading-[46px] lg:leading-[48px] tracking-[-1px] sm:tracking-[-2px]">
+              <h2 className="hidden md:block mb-4 leading-[40px] sm:leading-[46px] lg:leading-[48px] tracking-[-1px] sm:tracking-[-2px]">
                 Explore & Find <br className="" /> your{" "}
                 <span className="text-primary">
                   Dream
@@ -53,7 +56,7 @@ const Explore = () => {
             </div>
           </div>
           {/* text */}
-          <div className="bg-card mx-auto sm:mt-12 lg:mt-0 p-3 sm:p-4 lg:p-6 rounded-[12px] lg:rounded-[16px] max-w-[520px] sm:max-w-[644px] lg:max-w-[429px] content shrink-3">
+          <div className="bg-card mx-auto p-3 sm:p-4 lg:p-6 rounded-[12px] lg:rounded-[16px] max-w-[520px] sm:max-w-[644px] lg:max-w-[429px] content shrink-2">
             <p className="mb-16 sm:mb-20 lg:mb-22 font-normal text-[16px] leading-[22px] sm:leading-[24px]">
               “We believe there&#39;s a perfect home for everybody, no matter
               the budget. That&#39;s why we always find the best homes for your
@@ -97,7 +100,7 @@ const Explore = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
