@@ -1,4 +1,5 @@
 import FadeIn from "@/components/animations/FadeIn";
+
 import Image from "next/image";
 import React from "react";
 
@@ -6,9 +7,7 @@ export default function HeroSection() {
   return (
     <section className="bg-background text-center">
       <div className="mx-auto px-4 container">
-        {/* Heading + Logo */}
         <div className="flex md:flex-row flex-col justify-center items-center gap-4 md:gap-0 pt-[71px]">
-          {/* ✅ Mobile/Tablet: Logo উপরে */}
           <div className="md:hidden block">
             <Image
               src="/5.png"
@@ -27,7 +26,7 @@ export default function HeroSection() {
               <span className="text-foreground">Benfort</span>
             </h1>
           </FadeIn>
-          {/* ✅ Desktop: Logo পাশে */}
+
           <FadeIn delay={0.8}>
             <div className="hidden md:block">
               <Image
@@ -41,7 +40,6 @@ export default function HeroSection() {
           </FadeIn>
         </div>
 
-        {/* Subtext */}
         <FadeIn delay={0.5}>
           <p className="mt-[26px] text-secondary-foreground para">
             We believe there’s a perfect home for everybody, no matter the
@@ -51,7 +49,6 @@ export default function HeroSection() {
           </p>
         </FadeIn>
 
-        {/* Images Section */}
         <div className="flex lg:flex-row flex-col justify-center items-center gap-6 mx-auto py-[88px]">
           <Image
             src="/6.png"
@@ -60,7 +57,7 @@ export default function HeroSection() {
             height={522}
             className="shadow-md rounded-xl w-full md:w-auto"
           />
-          {/* ✅ Hide second image on mobile */}
+
           <Image
             src="/7.png"
             alt="Testimonial 2"
