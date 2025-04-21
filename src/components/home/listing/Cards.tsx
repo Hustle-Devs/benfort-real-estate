@@ -7,7 +7,7 @@ import propertyImg4 from "@/../public/card/propertyImg4.png";
 import propertyImg5 from "@/../public/card/propertyImg5.png";
 import propertyImg6 from "@/../public/card/propertyImg6.png";
 import { BedDouble } from "lucide-react";
-export const Cards = () => {
+const Cards = () => {
   const cardsContents = [
     {
       id: 1,
@@ -341,3 +341,4 @@ export const Cards = () => {
     </>
   );
 };
+export default Cards;
