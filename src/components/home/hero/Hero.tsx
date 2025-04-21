@@ -53,21 +53,25 @@ export default function HeroSection() {
 
         {/* Images Section */}
         <div className="flex lg:flex-row flex-col justify-center items-center gap-6 mx-auto py-[88px]">
-          <Image
-            src="/6.png"
-            alt="Testimonial 1"
-            width={643}
-            height={522}
-            className="shadow-md rounded-xl w-full md:w-auto"
-          />
+          <FadeIn delay={0.5}>
+            <Image
+              src="/6.png"
+              alt="Testimonial 1"
+              width={643}
+              height={522}
+              className="shadow-md rounded-xl w-full md:w-auto"
+            />
+          </FadeIn>
           {/* ✅ Hide second image on mobile */}
-          <Image
-            src="/7.png"
-            alt="Testimonial 2"
-            width={421}
-            height={522}
-            className="hidden sm:block shadow-md rounded-xl w-full md:w-auto"
-          />
+          <FadeIn delay={0.7}>
+            <Image
+              src="/7.png"
+              alt="Testimonial 2"
+              width={421}
+              height={522}
+              className="hidden sm:block shadow-md rounded-xl w-full md:w-auto"
+            />
+          </FadeIn>
         </div>
       </div>
     </section>
