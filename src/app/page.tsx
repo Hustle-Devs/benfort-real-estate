@@ -1,4 +1,5 @@
 import Explore from "@/components/home/explore-section/Explore";
+import Featured from "@/components/home/featured/Featured";
 import GetMore from "@/components/home/get-more/GetMore";
 import Hero from "@/components/home/hero/Hero";
 import Listing from "@/components/home/listing/Listing";
@@ -13,6 +14,7 @@ export default function Home() {
       <Perks />
       <Explore />
       <Listing />
+      <Featured />
       <GetMore />
       <OurAgentsSection />
       <SubscribeSection />
