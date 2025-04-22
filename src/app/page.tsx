@@ -1,5 +1,6 @@
 import Explore from "@/components/home/explore-section/Explore";
 import Featured from "@/components/home/featured/Featured";
+import GetInTouch from "@/components/home/get-in-touch/GetInTouch";
 import GetMore from "@/components/home/get-more/GetMore";
 import Hero from "@/components/home/hero/Hero";
 import Listing from "@/components/home/listing/Listing";
@@ -18,6 +19,7 @@ export default function Home() {
       <GetMore />
       <OurAgentsSection />
       <SubscribeSection />
+      <GetInTouch />
     </>
   );
 }
