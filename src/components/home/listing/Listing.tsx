@@ -6,8 +6,8 @@ const Listing = () => {
     <section className="py-16 sm:py-20 md:py-24 lg:py-30">
       <div className="mx-auto px-4 max-w-[1232px]">
         <div className="text-center listHeading">
-          <h2 className="mb-1 sm:mb-2 lg:mb-4 text-destructive leading-[44px] sm:leading-[46px] lg:leading-[48px] tracking-[-1px] sm:tracking-[-2px]">
-            <span>New Listing</span>
+          <h2 className="mb-1 sm:mb-2 lg:mb-4 text-primary leading-[44px] sm:leading-[46px] lg:leading-[48px] tracking-[-1px] sm:tracking-[-2px]">
+            New Listing
           </h2>
           <p className="font-normal text-[16px] leading-[22px] sm:leading-[24px]">
             Explore latest & featured properties for sale.
