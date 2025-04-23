@@ -13,7 +13,7 @@ const Listing = () => {
             Explore latest & featured properties for sale.
           </p>
         </div>
-        <div className="gap-4 lg:gap-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-14 sm:mt-18 md:mt-20 lg:mt-26">
+        <div className="gap-3 lg:gap-4 xl:gap-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-14 sm:mt-18 md:mt-20 lg:mt-26">
           <Cards />
         </div>
       </div>
