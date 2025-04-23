@@ -139,7 +139,7 @@
 
 @layer utilities {
   h1 {
-    @apply font-medium text-primary md:text-foreground lg:text-[81px] text-5xl md:text-6xl leading-[81px];
+    @apply font-medium lg:text-[81px] text-5xl md:text-6xl leading-[81px];
   }
   h2 {
     @apply font-medium md:text-[40px] text-3xl leading-12;
