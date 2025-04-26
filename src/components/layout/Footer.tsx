@@ -6,7 +6,7 @@ const Footer: FC = () => {
   return (
     <footer className="bg-foreground dark:bg-card text-background dark:text-foreground">
       <section className="mx-auto px-4 pt-20 pb-8 container">
-        <div className="flex lg:flex-row flex-col justify-between items-start gap-12 mx-auto text-start">
+        <div className="flex lg:flex-row flex-col justify-between items-start gap-3 xl:gap-12 mx-auto text-start">
           {/* ************ */}
           <div className="flex sm:flex-row flex-col flex-wrap gap-12 lg:gap-16">
             {/* Social + Address */}
@@ -97,7 +97,7 @@ const Footer: FC = () => {
             </div>
 
             {/* Account */}
-            <div className="min-w-[150px]">
+            <div className="min-w-[100px]">
               <h3 className="mb-3 hover:text-primary uppercase cursor-pointer h3">
                 Account
               </h3>
@@ -128,7 +128,7 @@ const Footer: FC = () => {
         </div>
 
         {/* Bottom Line */}
-        <div className="flex md:flex-row flex-col justify-between items-center bg-[url('/footerBg.png')] bg-contain bg-no-repeat bg-center mt-12 pt-4 md:pt-[400px] pb-20 text-background dark:text-foreground p4">
+        <div className="flex md:flex-row flex-col justify-between items-start md:items-center bg-[url('/footerBg.png')] bg-contain bg-no-repeat bg-center md:mt-12 pt-[300px] md:pt-[400px] pb-20 text-background dark:text-foreground p4">
           <div className="flex flex-wrap justify-center md:justify-start gap-4">
             <Link href="#" className="hover:text-primary">
               Privacy Policy

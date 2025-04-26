@@ -139,10 +139,10 @@
 
 @layer utilities {
   h1 {
-    @apply font-medium lg:text-[81px] text-5xl md:text-6xl leading-[81px];
+    @apply font-medium lg:text-[81px] text-4xl md:text-6xl leading-10 md:leading-14 lg:leading-[81px];
   }
   h2 {
-    @apply font-medium text-[28px] md:text-[40px] leading-12;
+    @apply font-medium text-[28px] md:text-[40px] leading-12 tracking-[-2px];
   }
   .h3 {
     @apply font-semibold text-sm leading-[21px];
@@ -154,7 +154,7 @@
     @apply font-medium text-lg leading-[25px];
   }
   .h6 {
-    @apply font-medium text-[28px] leading-[39px];
+    @apply font-medium lg:text-[28px] text-xl lg:leading-[39px];
   }
   .btn {
     @apply px-3 py-[10px] rounded-md font-normal text-base leading-6;

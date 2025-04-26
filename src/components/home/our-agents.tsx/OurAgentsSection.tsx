@@ -38,7 +38,7 @@ export default function OurAgentsSection() {
   ];
 
   return (
-    <section className="mx-auto py-[120px] container">
+    <section className="mx-auto px-4 py-8 md:py-12 lg:py-[120px] container">
       <div className="text-center">
         <FadeIn delay={0.2}>
           <h2>
@@ -47,7 +47,7 @@ export default function OurAgentsSection() {
           </h2>
         </FadeIn>
         <FadeIn delay={0.5}>
-          <p className="mt-2 pb-[104px] text-foreground">
+          <p className="mt-2 pb-12 lg:pb-[104px] text-foreground">
             Explore the world-class agents.
           </p>
         </FadeIn>
@@ -58,13 +58,13 @@ export default function OurAgentsSection() {
           <AgentCard key={index} {...agent} />
         ))}
 
-        <div className="flex flex-col justify-between bg-card mx-auto p-6 rounded-2xl w-[373px]">
+        <div className="flex flex-col justify-between bg-card mx-auto p-6 rounded-2xl max-w-[373px]">
           <div className="bg-[#FFEEE5] dark:bg-black p-4 border border-primary border-dashed">
             <FadeIn delay={0.2}>
               <h6 className="h6"> homfort</h6>{" "}
             </FadeIn>
             <FadeIn delay={0.5}>
-              <p className="mt-[250px] mb-6 text-foreground p5">
+              <p className="mt-[250px] lg:mt-[180px] xl:mt-[250px] mb-6 text-foreground p5">
                 Our agent are available to help with your property search and
                 give your enquiries on the best offers.
               </p>

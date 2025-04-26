@@ -5,14 +5,16 @@ import Image from "next/image";
 
 export default function GetMore() {
   return (
-    <main className="bg-[url('/8.png')] bg-cover bg-no-repeat bg-center px-4 py-[120px]">
-      <div className="flex lg:flex-row flex-col justify-center items-start gap-[100px]">
+    <main className="bg-[url('/8.png')] bg-cover bg-no-repeat bg-center px-4 py-8 md:py-12 lg:py-[120px]">
+      <div className="flex lg:flex-row flex-col justify-center items-start gap-[50px] xl:gap-[100px]">
         <div className="flex flex-col items-start text-left">
           <FadeIn delay={0.2}>
-            <h2 className="mb-4 text-background">Get more out of Homfort</h2>{" "}
+            <h2 className="mb-4 text-background dark:text-foreground">
+              Get more out of Homfort
+            </h2>{" "}
           </FadeIn>
           <FadeIn delay={0.5}>
-            <p className="mb-6 max-w-md text-background para">
+            <p className="mb-6 max-w-md text-background dark:text-foreground para">
               Explore easier ways to search for properties.
             </p>
           </FadeIn>
@@ -20,14 +22,14 @@ export default function GetMore() {
           <div className="flex flex-row justify-center lg:justify-start gap-4">
             <FadeIn delay={0.5}>
               {" "}
-              <button className="border hover:border-primary border-background rounded text-background hover:text-primary btn2">
+              <button className="border hover:border-primary dark:border-foreground border-background rounded text-background hover:text-primary dark:text-foreground btn2">
                 Log In
               </button>
             </FadeIn>
 
             <FadeIn delay={0.5}>
               {" "}
-              <button className="bg-background hover:bg-primary rounded text-foreground hover:text-background dark:hover:text-foreground btn2">
+              <button className="bg-background hover:bg-primary dark:bg-foreground rounded text-foreground hover:text-background dark:hover:text-foreground dark:text-background btn2">
                 Sign Up
               </button>
             </FadeIn>

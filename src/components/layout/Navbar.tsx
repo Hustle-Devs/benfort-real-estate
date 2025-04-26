@@ -18,9 +18,9 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="top-0 z-50 sticky bg-background dark:bg-card">
-      <section className="mx-auto container">
-        <nav className="flex justify-between items-center px-4 h-[89px]">
+    <header className="top-0 z-50 sticky bg-background dark:bg-card w-full">
+      <section className="mx-auto px-4 w-full overflow-x-hidden container">
+        <nav className="flex justify-between items-center h-[89px]">
           {/* Logo */}
           <Link href="/" className="font-bricolage text-[32px] cursor-pointer">
             Bentfort
@@ -66,7 +66,7 @@ export default function Navbar() {
 
           {/* Mobile Hamburger */}
           <Button
-            className="md:hidden text-foreground"
+            className="md:hidden bg-card-foreground text-background"
             onClick={() => setIsMenuOpen(true)}
           >
             <MenuIcon className="w-6 h-6" />
