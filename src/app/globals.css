@@ -47,7 +47,7 @@
   /* BG color #ffffff */
   --background: oklch(1 0 0);
   /* text color #191a20 */
-  --foreground: oklch(21.94% 0.012 277.91);
+  --foreground: hsl(231, 12%, 11%);
   /* Orange Color #ff6625 */
   --primary: oklch(69.7% 0.2 40.37);
   /* Halka Orange color #FFF8F4 */

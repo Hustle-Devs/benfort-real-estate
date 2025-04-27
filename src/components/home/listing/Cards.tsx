@@ -95,34 +95,26 @@ const Cards = () => {
   return (
     <>
       {cardsContents.map((card) => (
-        <div
-          className="mx-auto pb-4 lg:pb-6 max-w-fit perkCard shrink-2"
-          key={card.id}
-        >
-          <div className="relative">
-            <FadeIn delay={0.8}>
+        <div className="mx-auto pb-4 lg:pb-6 w-full perkCard" key={card.id}>
+          <FadeIn delay={0.3}>
+            <div className="relative w-full">
               <Image
                 src={card.image}
                 alt="propertyImg1 image"
                 placeholder="blur"
-              />{" "}
-            </FadeIn>
-            <div className="top-0 left-0 absolute flex justify-between gap-2 lg:gap-4 p-2 md:p-3 lg:p-5 w-full h-full font-light text-sm">
-              <div className="flex justify-between items-end gap-4 w-full">
-                <div className="flex gap-1 lg:gap-2">
-                  {" "}
-                  <FadeIn delay={0.2}>
-                    <span className="bg-popover px-2 lg:px-3 py-1 lg:py-1.5 rounded-[6px] font-normal text-[12px] text-foreground leading-[18px]">
+                className="w-full"
+              />
+              <div className="top-0 left-0 absolute flex justify-between gap-2 lg:gap-4 p-2 md:p-3 lg:p-5 w-full h-full font-light text-sm">
+                <div className="flex justify-between items-end gap-4 w-full">
+                  <div className="flex gap-1 lg:gap-2">
+                    <div className="bg-popover px-2 lg:px-3 py-1 lg:py-1.5 rounded-[6px] font-normal text-[12px] text-foreground leading-[18px]">
                       {card.roomType[0]}
-                    </span>
-                    <span className="bg-popover px-2 lg:px-3 py-1 lg:py-1.5 rounded-[6px] font-normal text-[12px] text-foreground leading-[18px]">
+                    </div>
+                    <div className="bg-popover px-2 lg:px-3 py-1 lg:py-1.5 rounded-[6px] font-normal text-[12px] text-foreground leading-[18px]">
                       {card.roomType[1]}
-                    </span>
-                  </FadeIn>
-                </div>
-                <span className="bg-popover p-1 lg:p-1.5">
-                  {" "}
-                  <FadeIn delay={0.2}>
+                    </div>
+                  </div>
+                  <span className="bg-popover p-1 lg:p-1.5">
                     <svg
                       width="17"
                       height="19"
@@ -146,19 +138,17 @@ const Cards = () => {
                         className="fill-foreground"
                       />
                     </svg>
-                  </FadeIn>
-                </span>
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="mt-3 lg:mt-4 max-w-[384px]">
-            <FadeIn delay={0.2}>
+          </FadeIn>
+          <FadeIn delay={0.4}>
+            <div className="mt-3 lg:mt-4 max-w-[384px]">
               <h5 className="mb-2 font-normal text-[18px] leading-[25px] sm:leading-[27px]">
                 {card.title}
-              </h5>{" "}
-            </FadeIn>
-            <ul className="flex flex-wrap items-center gap-2">
-              <FadeIn delay={0.2}>
+              </h5>
+              <ul className="flex flex-wrap items-center gap-2">
                 <li className="flex items-center gap-1">
                   <svg
                     width="16"
@@ -183,10 +173,9 @@ const Cards = () => {
                     {card.locate}
                   </p>
                 </li>
-              </FadeIn>
-              <FadeIn delay={0.2}>
-                <li className="flex items-center gap-1">
-                  <span className="bg-foreground rounded-full w-2.5 h-2.5"></span>
+
+                <li className="">
+                  <span className="block bg-foreground rounded-full w-2.5 h-2.5"></span>
                 </li>
 
                 <li className="flex items-center gap-1">
@@ -230,15 +219,11 @@ const Cards = () => {
                     {card.roomCount}
                   </p>
                 </li>
-              </FadeIn>
-            </ul>
-            <FadeIn delay={0.2}>
+              </ul>
               <p className="my-2 sm:my-3 font-normal text-[12px] break-words leading-[18px] whitespace-normal">
                 {card.details}
-              </p>{" "}
-            </FadeIn>
-            <ul className="flex flex-wrap items-center gap-2 lg:gap-3 mb-2 sm:mb-3">
-              <FadeIn delay={0.2}>
+              </p>
+              <ul className="flex flex-wrap items-center gap-2 lg:gap-3 mb-2 sm:mb-3">
                 <li className="flex items-center gap-1">
                   <BedDouble
                     size={16}
@@ -250,8 +235,6 @@ const Cards = () => {
                     {card.bedCount} Room
                   </p>
                 </li>
-              </FadeIn>
-              <FadeIn delay={0.2}>
                 <li className="flex items-center gap-1">
                   <svg
                     width="17"
@@ -300,9 +283,7 @@ const Cards = () => {
                   <p className="font-normal text-[12px] leading-[18px]">
                     {card.bathCount} Bath Room
                   </p>
-                </li>{" "}
-              </FadeIn>{" "}
-              <FadeIn delay={0.2}>
+                </li>
                 <li className="flex items-center gap-1">
                   <svg
                     width="17"
@@ -354,14 +335,12 @@ const Cards = () => {
                     {card.squareFit}
                   </p>
                 </li>
-              </FadeIn>
-            </ul>{" "}
-            <FadeIn delay={0.2}>
+              </ul>
               <h6 className="font-semibold text-[14px] leading-[21px]">
                 $ {card.price}
-              </h6>{" "}
-            </FadeIn>
-          </div>
+              </h6>
+            </div>
+          </FadeIn>
         </div>
       ))}
     </>
