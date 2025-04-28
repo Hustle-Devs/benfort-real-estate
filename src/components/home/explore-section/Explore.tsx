@@ -14,45 +14,52 @@ const Explore = () => {
       <div className="mx-auto px-4 max-w-[1232px]">
         <div className="flex lg:flex-row flex-col justify-between items-center gap-2.5 mx-auto max-w-[1088px]">
           <div className="flex sm:flex-row flex-col justify-between gap-2 mx-auto max-w-fit">
-            <FadeIn delay={0.3}>
-              <div className="">
+            <div>
+              <FadeIn delay={0.2}>
                 <h2 className="mb-4 font-medium leading-[40px] sm:leading-[46px] lg:leading-[48px] tracking-[-1px] sm:tracking-[-2px]">
-                  Explore & Find <br className="" /> your{" "}
+                  Explore & Find <br /> your{" "}
                   <span className="text-primary">
                     Dream
                     <br className="hidden sm:block" /> home
                   </span>
                 </h2>
+              </FadeIn>
+              <FadeIn delay={0.3}>
                 <div className="relative w-fit">
-                  <Image
-                    src={dreamhouseimage}
-                    alt="dreamhouseimage"
-                    className=""
-                  />
-
+                  <Image src={dreamhouseimage} alt="Dream House" className="" />
                   <div className="top-full left-0 absolute bg-card px-[19px] py-3 rounded-[8px] sm:rounded-[16px] -translate-y-1/2">
-                    <div className="flex">
-                      <div className="shadow-[0px_8px_12px_rgba(0,0,0,0.08)] border-[2px] border-white rounded-full w-fit">
-                        <Image src={dream1} alt="dream1" />
-                      </div>
-                      <div className="shadow-[0px_8px_12px_rgba(0,0,0,0.08)] border-[2px] border-white rounded-full w-fit">
-                        <Image src={dream2} alt="dream2" />
-                      </div>
-                      <div className="shadow-[0px_8px_12px_rgba(0,0,0,0.08)] border-[2px] border-white rounded-full w-fit">
-                        <Image src={dream3} alt="dream3" />
-                      </div>
-                      <div className="shadow-[0px_8px_12px_rgba(0,0,0,0.08)] border-[2px] border-white rounded-full w-fit">
-                        <Image src={dream4} alt="dream4" />
-                      </div>
+                    <div className="flex space-x-2">
+                      <FadeIn delay={0.4}>
+                        <div className="shadow-[0px_8px_12px_rgba(0,0,0,0.08)] border-2 border-white rounded-full">
+                          <Image src={dream1} alt="dream1" />
+                        </div>
+                      </FadeIn>
+                      <FadeIn delay={0.45}>
+                        <div className="shadow-[0px_8px_12px_rgba(0,0,0,0.08)] border-2 border-white rounded-full">
+                          <Image src={dream2} alt="dream2" />
+                        </div>
+                      </FadeIn>
+                      <FadeIn delay={0.5}>
+                        <div className="shadow-[0px_8px_12px_rgba(0,0,0,0.08)] border-2 border-white rounded-full">
+                          <Image src={dream3} alt="dream3" />
+                        </div>
+                      </FadeIn>
+                      <FadeIn delay={0.55}>
+                        <div className="shadow-[0px_8px_12px_rgba(0,0,0,0.08)] border-2 border-white rounded-full">
+                          <Image src={dream4} alt="dream4" />
+                        </div>
+                      </FadeIn>
                     </div>
-
-                    <h6 className="mt-1 sm:mt-2 font-normal text-[14px] text-center leading-[19px] sm:leading-[21px]">
-                      300+ Happy Client
-                    </h6>
+                    <FadeIn delay={0.6}>
+                      <h6 className="mt-1 sm:mt-2 font-normal text-[14px] text-center leading-[19px] sm:leading-[21px]">
+                        300+ Happy Clients
+                      </h6>
+                    </FadeIn>
                   </div>
                 </div>
-              </div>
-            </FadeIn>
+              </FadeIn>
+            </div>
+
             <FadeIn delay={0.4}>
               <div className="">
                 <Image src={Background} alt="Background" className="" />

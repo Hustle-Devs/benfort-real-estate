@@ -9,7 +9,7 @@ export default function SubscribeSection() {
           <FadeIn delay={0.2}>
             {" "}
             <h6 className="mb-4 md:max-w-[350px] lg:max-w-[411px] h6">
-              There is always something new! Don't miss out.
+              There is always something new! Don&apos;t miss out.
             </h6>{" "}
           </FadeIn>
           <FadeIn delay={0.5}>

@@ -8,24 +8,23 @@ export default function HeroSection() {
       <div className="mx-auto px-4 container">
         <div className="relative flex flex-col items-center pt-8 md:pt-12 lg:pt-[71px]">
           {/* Image Top for sm/md */}
-          <div className="lg:hidden block mb-4">
-            <Image
-              src="/5.png"
-              alt="Hero Icon"
-              width={107}
-              height={56}
-              className="mx-auto w-[107px] h-[56px]"
-            />
-          </div>
+          <FadeIn delay={0.1}>
+            <div className="lg:hidden block mb-4">
+              <Image
+                src="/5.png"
+                alt="Hero Icon"
+                width={107}
+                height={56}
+                className="mx-auto w-[107px] h-[56px]"
+              />
+            </div>
+          </FadeIn>
 
           {/* h1 + Positioned Image */}
           <FadeIn delay={0.2}>
             <div className="inline-block relative text-center">
               <h1 className="lg:-ml-[100px] h1">
                 Find the <span className="text-primary">perfect</span>
-                {/* <br />
-                <span className="text-primary">property</span> with{" "}
-                <span className="text-foreground">Benfort</span> */}
               </h1>
               <h1 className="text-primary h1">
                 property <span className="text-foreground">with Benfort</span>
@@ -45,7 +44,7 @@ export default function HeroSection() {
           </FadeIn>
         </div>
 
-        <FadeIn delay={0.5}>
+        <FadeIn delay={0.3}>
           <p className="mx-auto mt-[26px] max-w-[561px] text-secondary-foreground para">
             We believe there’s a perfect home for everybody, no matter the
             budget. That’s why we always find the best homes for your budget.
@@ -53,7 +52,7 @@ export default function HeroSection() {
         </FadeIn>
 
         <div className="flex lg:flex-row flex-col justify-center items-center gap-6 mx-auto py-8 md:py-12 lg:py-[88px]">
-          <FadeIn delay={0.8}>
+          <FadeIn delay={0.5} noViewport>
             <Image
               src="/6.png"
               alt="Testimonial 1"
@@ -62,14 +61,14 @@ export default function HeroSection() {
               className="shadow-md rounded-xl w-full md:w-[645px]"
             />
           </FadeIn>
-          <FadeIn delay={0.8}>
+          <FadeIn delay={0.7} noViewport>
             <Image
               src="/7.png"
               alt="Testimonial 2"
               width={421}
               height={522}
               className="hidden lg:block shadow-md rounded-xl w-full lg:w-[425px]"
-            />{" "}
+            />
           </FadeIn>
         </div>
       </div>

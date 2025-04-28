@@ -2,6 +2,7 @@
 
 import AgentCard from "@/components/layout/AgentCard";
 import FadeIn from "@/components/animations/FadeIn";
+import StaggerWrapper from "@/components/animations/StaggerWrapper";
 
 export default function OurAgentsSection() {
   const agents = [
@@ -46,16 +47,26 @@ export default function OurAgentsSection() {
             <span className="text-primary">Agents</span>
           </h2>
         </FadeIn>
-        <FadeIn delay={0.5}>
+        <FadeIn delay={0.3}>
           <p className="mt-2 pb-12 lg:pb-[104px] text-foreground">
             Explore the world-class agents.
           </p>
         </FadeIn>
       </div>
 
-      <div className="gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto max-w-[1200px]">
+      <StaggerWrapper
+        stagger={0.5}
+        duration={0.6}
+        className="gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto max-w-[1200px]"
+      >
         {agents.map((agent, index) => (
-          <AgentCard key={index} {...agent} />
+          <AgentCard
+            image={agent.image}
+            name={agent.name}
+            role={agent.role}
+            listing={agent.listing}
+            key={index}
+          />
         ))}
 
         <div className="flex flex-col justify-between bg-card mx-auto p-6 rounded-2xl max-w-[373px]">
@@ -76,7 +87,7 @@ export default function OurAgentsSection() {
             </FadeIn>
           </div>
         </div>
-      </div>
+      </StaggerWrapper>
     </section>
   );
 }
