@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import { motion, Transition } from "framer-motion"; // corrected import!
-import FadeInProps from "../types/animations/animate";
+import { motion, Transition } from "framer-motion";
+import FadeInProps from "@/types/animations/animate";
 
 const FadeIn = ({
   children,

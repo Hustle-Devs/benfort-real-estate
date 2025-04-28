@@ -1,45 +1,12 @@
 import Image from "next/image";
 import React from "react";
-import feature1 from "@/../public/featured/feature1.svg";
-import feature2 from "@/../public/featured/feature2.png";
-import feature3 from "@/../public/featured/feature3.png";
-import feature4 from "@/../public/featured/feature4.png";
 import mapwhite from "@/../public/featured/mapwhite.svg";
 import fbook from "@/../public/featured/fbooks.svg";
 import FadeIn from "@/components/animations/FadeIn";
 import StaggerWrapper from "@/components/animations/StaggerWrapper";
+import { featuredData } from "@/constants/home/features-data";
 
 const Featured = () => {
-  const featuredData = [
-    {
-      id: 1,
-      image: feature1,
-      villa: "Suburb Home",
-      locate: "Jersey City",
-      vCount: "4",
-    },
-    {
-      id: 2,
-      image: feature2,
-      villa: "Smart Home Duplex",
-      locate: "Catskills",
-      vCount: "4",
-    },
-    {
-      id: 3,
-      image: feature3,
-      villa: "Luxury House",
-      locate: "Catskills",
-      vCount: "4",
-    },
-    {
-      id: 4,
-      image: feature4,
-      villa: "Gorgeous Villa for Rent",
-      locate: "Jersey City",
-      vCount: "6",
-    },
-  ];
   return (
     <section className="bg-card py-16 sm:py-20 md:py-24 lg:py-30">
       <div className="mx-auto px-4 max-w-[1232px] myContizer">

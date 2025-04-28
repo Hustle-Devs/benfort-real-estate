@@ -1,26 +1,6 @@
 import Image from "next/image";
 import FadeIn from "@/components/animations/FadeIn";
-
-const perks = [
-  {
-    title: "BUY PROPERTIES",
-    description:
-      "Explore Homfort’s 2 million+ homes tailored and uncover your ideal living space.",
-    image: "/round1.png",
-  },
-  {
-    title: "RENT PROPERTIES",
-    description:
-      "Discover a rental you’ll love on Homfort, thanks to 35+ filters and tailored keywords.",
-    image: "/round2.png",
-  },
-  {
-    title: "LEASE PROPERTIES",
-    description:
-      "List, sell, thrive – with our top-notch real estate agency. It’s super easy & fun.",
-    image: "/round3.png",
-  },
-];
+import { perksData } from "@/constants/home/perks-data";
 
 const Perks = () => {
   return (
@@ -38,7 +18,7 @@ const Perks = () => {
       </FadeIn>
 
       <div className="gap-12 grid grid-cols-1 md:grid-cols-3 mx-auto max-w-[1200px]">
-        {perks.map((perk, index) => {
+        {perksData.map((perk, index) => {
           const baseDelay = 0.5 + index * 0.2;
           return (
             <FadeIn key={index} delay={baseDelay}>

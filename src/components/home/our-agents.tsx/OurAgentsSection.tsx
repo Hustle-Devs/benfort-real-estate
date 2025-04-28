@@ -3,41 +3,9 @@
 import AgentCard from "@/components/layout/AgentCard";
 import FadeIn from "@/components/animations/FadeIn";
 import StaggerWrapper from "@/components/animations/StaggerWrapper";
+import { agentData } from "@/constants/home/agent-data";
 
 export default function OurAgentsSection() {
-  const agents = [
-    {
-      name: "Ford Clinton",
-      role: "Listing Agent",
-      listing: 3,
-      image: "/10.png",
-    },
-    {
-      name: "Hassan Patrick",
-      role: "Sales Person",
-      listing: 2,
-      image: "/11.png",
-    },
-    {
-      name: "Mike Rutter",
-      role: "Commercial Broker",
-      listing: 2,
-      image: "/12.png",
-    },
-    {
-      name: "Sarah Morgan",
-      role: "Property Consultant",
-      listing: 4,
-      image: "/13.png",
-    },
-    {
-      name: "James Allen",
-      role: "Real Estate Advisor",
-      listing: 2,
-      image: "/13.png",
-    },
-  ];
-
   return (
     <section className="mx-auto px-4 py-8 md:py-12 lg:py-[120px] container">
       <div className="text-center">
@@ -59,7 +27,7 @@ export default function OurAgentsSection() {
         duration={0.6}
         className="gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto max-w-[1200px]"
       >
-        {agents.map((agent, index) => (
+        {agentData.map((agent, index) => (
           <AgentCard
             image={agent.image}
             name={agent.name}
