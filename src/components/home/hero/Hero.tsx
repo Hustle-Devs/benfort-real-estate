@@ -1,6 +1,8 @@
-import FadeIn from "@/components/animations/FadeIn";
-import Image from "next/image";
 import React from "react";
+
+import Image from "next/image";
+
+import FadeIn from "@/components/animations/FadeIn";
 
 export default function HeroSection() {
   return (

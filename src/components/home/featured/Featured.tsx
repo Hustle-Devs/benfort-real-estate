@@ -1,7 +1,9 @@
 import Image from "next/image";
 import React from "react";
+
 import mapwhite from "@/../public/featured/mapwhite.svg";
 import fbook from "@/../public/featured/fbooks.svg";
+
 import FadeIn from "@/components/animations/FadeIn";
 import StaggerWrapper from "@/components/animations/StaggerWrapper";
 import { featuredData } from "@/constants/home/features-data";

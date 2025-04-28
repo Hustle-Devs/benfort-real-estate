@@ -1,12 +1,14 @@
 "use client";
 import React, { FC } from "react";
 import Image, { StaticImageData } from "next/image";
+
 import dream1 from "@/../public/explore/dreem1.svg";
 import dream2 from "@/../public/explore/dream2.svg";
 import dream3 from "@/../public/explore/dream3.svg";
 import dream4 from "@/../public/explore/dream4.svg";
 import dreamhouseimage from "@/../public/explore/dreamhouseimage.png";
 import Background from "@/../public/explore/Background.png";
+
 import FadeIn from "@/components/animations/FadeIn";
 import HappyClientsPopup from "./HappyClientPopup";
 

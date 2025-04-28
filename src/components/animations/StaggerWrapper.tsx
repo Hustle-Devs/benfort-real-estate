@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
+
 import { motion } from "framer-motion";
+
 import StaggerWrapperProps from "@/types/animations/animate";
 
 const cardVariants = {

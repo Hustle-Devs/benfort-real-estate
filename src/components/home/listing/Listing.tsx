@@ -1,6 +1,7 @@
 import React from "react";
-import Cards from "./Cards";
+
 import FadeIn from "@/components/animations/FadeIn";
+import Cards from "./Cards";
 
 const Listing = () => {
   return (

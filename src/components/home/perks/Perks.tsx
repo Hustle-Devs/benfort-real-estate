@@ -1,6 +1,8 @@
 import Image from "next/image";
-import FadeIn from "@/components/animations/FadeIn";
+
 import { perksData } from "@/constants/home/perks-data";
+
+import FadeIn from "@/components/animations/FadeIn";
 
 const Perks = () => {
   return (

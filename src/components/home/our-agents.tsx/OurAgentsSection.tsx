@@ -1,9 +1,10 @@
 "use client";
 
-import AgentCard from "@/components/layout/AgentCard";
+import { agentData } from "@/constants/home/agent-data";
+
+import AgentCard from "@/components/home/our-agents.tsx/AgentCard";
 import FadeIn from "@/components/animations/FadeIn";
 import StaggerWrapper from "@/components/animations/StaggerWrapper";
-import { agentData } from "@/constants/home/agent-data";
 
 export default function OurAgentsSection() {
   return (

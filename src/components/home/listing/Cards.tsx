@@ -1,6 +1,8 @@
-import Image from "next/image";
 import React from "react";
+
+import Image from "next/image";
 import { BedDouble } from "lucide-react";
+
 import StaggerWrapper from "@/components/animations/StaggerWrapper";
 import { listingData } from "@/constants/home/listing-data";
 const Cards = () => {

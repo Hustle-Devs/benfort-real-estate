@@ -1,8 +1,8 @@
 "use client";
+import React, { useState } from "react";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import React from "react";
-import { useState } from "react";
 import FadeIn from "@/components/animations/FadeIn";
 
 const GetInTouch = () => {

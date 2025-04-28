@@ -1,7 +1,7 @@
 "use client";
+import Image from "next/image";
 
 import FadeIn from "@/components/animations/FadeIn";
-import Image from "next/image";
 
 export default function GetMore() {
   return (
