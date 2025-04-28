@@ -93,7 +93,10 @@ export default function Navbar() {
       >
         <div className="flex justify-between items-center p-4 border-b">
           <p className="font-bricolage text-xl">Menu</p>
-          <Button onClick={() => setIsMenuOpen(false)}>
+          <Button
+            onClick={() => setIsMenuOpen(false)}
+            className="bg-black text-white"
+          >
             <XIcon className="w-5 h-5" />
           </Button>
         </div>
