@@ -1,6 +1,7 @@
+import { AgentItem } from "@/types/Home";
 import Image from "next/image";
 
-const AgentCard = ({ image, name, role, listing }) => {
+const AgentCard = ({ image, name, role, listing }: AgentItem) => {
   return (
     <div className="flex flex-col justify-center mx-auto">
       <Image src={image} alt={name} width={373} height={394} />
