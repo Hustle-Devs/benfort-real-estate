@@ -11,7 +11,7 @@ import { MoonIcon, SunIcon, MenuIcon, XIcon } from "lucide-react";
 import { Button } from "../ui/button";
 
 const navigation = [
-  { name: "Properties", href: "/" },
+  { name: "Properties", href: "/properties" },
   { name: "Search", href: "/Search" },
   { name: "Agent", href: "/Agent" },
 ];
