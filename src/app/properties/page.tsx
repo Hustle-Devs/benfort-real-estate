@@ -312,7 +312,6 @@ const Properties = () => {
                       </svg>
                     </span>
                   </div>
-
                   <div className="mt-4 lg:mt-6">
                     <div className="flex flex-wrap justify-between items-center gap-12">
                       <h4 className="font-medium text-xl lg:text-2xl leading-[34px] tracking-[-1.4px]">
@@ -547,7 +546,7 @@ const Properties = () => {
                     {/* address */}
                     <div className="mt-8 lg:mt-12 address">
                       <p className="mb-4 text-[12px]">ADDRESS</p>
-                      <div className="grid grid-cols-1 sm:grid-cols-2">
+                      <div className="grid grid-cols-2">
                         <div className="flex flex-col gap-5">
                           <div className="">
                             <p className="opacity-[0.4] mb-1 text-[12px]">
@@ -605,7 +604,7 @@ const Properties = () => {
                     {/* Details */}
                     <div className="mt-8 lg:mt-12 address">
                       <p className="mb-4 text-[12px]">DETAILS</p>
-                      <div className="grid grid-cols-1 sm:grid-cols-2">
+                      <div className="grid grid-cols-2">
                         <div className="flex flex-col gap-5">
                           <div className="">
                             <p className="opacity-[0.4] mb-1 text-[12px]">
@@ -732,7 +731,7 @@ const Properties = () => {
               {/* amenities & features */}
               <div className="mt-8 lg:mt-12 amenities">
                 <p className="mb-4 text-[12px]">AMENITIES & FEATURES</p>
-                <div className="gap-6 lg:gap-8 grid grid-cols-1 sm:grid-cols-2">
+                <div className="gap-6 lg:gap-8 grid grid-cols-2">
                   <div>
                     <p className="opacity-[0.4] pb-2 border-b border-border text-[12px]">
                       Interior Details
@@ -778,7 +777,7 @@ const Properties = () => {
                     </ul>
                   </div>
                 </div>
-                <div className="gap-6 lg:gap-8 grid grid-cols-1 sm:grid-cols-2 mt-6 lg:mt-8">
+                <div className="gap-6 lg:gap-8 grid grid-cols-2 mt-6 lg:mt-8">
                   {/* Utilities */}
                   <div>
                     <p className="opacity-[0.4] pb-2 border-b border-border text-[12px]">
@@ -830,9 +829,9 @@ const Properties = () => {
               <div className="flex flex-col gap-10 lg:gap-14">
                 {/* flooer plans */}
                 <div className="items-center gap-4 lg:gap-6 grid grid-cols-1 md:grid-cols-2 mt-10 lg:mt-15 florplans">
-                  <div className="plan">
+                  <div className="planText">
                     <p className="text-[12px]">FLORE PLANS</p>
-                    <div className="py-3 lg:py-5 text-[14px]">
+                    <div className="hidden md:block py-3 lg:py-5 text-[14px]">
                       <p className={`${activePlane === 1 ? "" : "hidden"}`}>
                         Living Spaces are more easily interpreted. All-In-Ones
                         color floor plan option clearly defines your listing’s
@@ -847,14 +846,10 @@ const Properties = () => {
                         Lorem ipsum, dolor sit amet consectetur adipisicing
                         elit. Quasi repellat repudiandae quod cupiditate. Vero
                         quos, dicta accusamus laboriosam corrupti quod ipsam
-                        earum reprehenderit inventore natus aut corporis ratione
-                        autem nesciunt nisi temporibus pariatur. Veniam dolorem
-                        asperiores quo eum, consectetur illum in sapiente
-                        molestiae quia repudiandae aspernatur hic error modi
-                        voluptate nam necessitatibus sint, fuga, ipsa nisi nobis
-                        illo vitae? Tenetur eligendi laborum molestiae molestias
-                        provident autem officiis sint, quis nostrum ex quibusdam
-                        rem sequi quo earum nisi! Deserunt, unde totam!
+                        earum reprehenderit invepsa nisi nobis illo vitae?
+                        Tenetur eligendi laborum molestiae molestias provident
+                        autem officiis sint, quis nostrum ex quibusdam rem sequi
+                        quo earum nisi! Deserunt, unde totam!
                       </p>
                       <p className={`${activePlane === 3 ? "" : "hidden"}`}>
                         Lorem ipsum dolor, sit amet consectetur adipisicing
@@ -862,12 +857,12 @@ const Properties = () => {
                         magni labore commodi sint nostrum vero quia architecto,
                         enim soluta vitae sequi. Cumque tempora libero corrupti
                         aperiam fugit neque repellat amet itaque, maiores, ipsa
-                        enim architecto reiciendis obcaecati quibusdam ipsam
-                        deleniti? Deserunt odio aperiam quae ipsa soluta aut
-                        minima! Maiores facilis distinctio libero quas dolorum.
+                        enim architecto reiciendis ob minima! Maiores facilis
+                        distinctio libero quas dolorum.
                       </p>
                     </div>
-                    <div className="flex flex-wrap items-center gap-2 lg:gap-4 planning">
+                    {/* button */}
+                    <div className="flex flex-wrap items-center gap-2 lg:gap-4 mt-6 md:mt-0 planningbtn">
                       <button
                         className={`cursor-pointer px-3 lg:px-4 py-1.5 lg:py-2 rounded-[6px] lg:rounded-[8px] text-[12px] ${
                           activePlane === 1
@@ -905,7 +900,7 @@ const Properties = () => {
                       src={florediagram}
                       alt="florediagram image"
                       placeholder="blur"
-                      className={`${activePlane === 1 ? "" : "hidden"}`}
+                      className={`${activePlane === 1 ? "" : "hidden"} w-full`}
                     />
                     <Image
                       src={florediagram}
@@ -913,7 +908,7 @@ const Properties = () => {
                       placeholder="blur"
                       className={`grayscale-50 ${
                         activePlane === 2 ? "" : "hidden"
-                      }`}
+                      } w-full`}
                     />
                     <Image
                       src={florediagram}
@@ -921,8 +916,42 @@ const Properties = () => {
                       placeholder="blur"
                       className={`grayscale-100 ${
                         activePlane === 3 ? "" : "hidden"
-                      }`}
+                      } w-full`}
                     />
+                    {/* description */}
+                    <div className="md:hidden py-3 lg:py-5 text-[14px]">
+                      <p className={`${activePlane === 1 ? "" : "hidden"}`}>
+                        Living Spaces are more easily interpreted. All-In-Ones
+                        color floor plan option clearly defines your listing’s
+                        living spaces, making them obvious and clearly visible
+                        to your potential buyers/clients. Add extra value to
+                        your services. Color floor-plans show that you care
+                        about selling your client’s listing; they add a premium,
+                        high value look to any listing and can be used in your
+                        brochures, email and websites.
+                      </p>
+                      <p className={`${activePlane === 2 ? "" : "hidden"}`}>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing
+                        elit. Quasi repellat repudiandae quod cupiditate. Vero
+                        quos, dicta accusamus laboriosam corrupti quod ipsam
+                        earum reprehenderit inventore natus aut corporis ratione
+                        autem nesciunt nisi temporibus pariatur. Veniam dolorem
+                        asperiores quo eum, consenisi nobis illo vitae? Tenetur
+                        eligendi laborum molestiae molestias provident autem
+                        officiis sint, quis nostrum ex quibusdam rem sequi quo
+                        earum nisi! Deserunt, unde totam!
+                      </p>
+                      <p className={`${activePlane === 3 ? "" : "hidden"}`}>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Ratione at iste repudiandae a laborum inventore
+                        magni labore commodi sint nostrum vero quia architecto,
+                        enim soluta vitae sequi. Cumque tempora libero corrupti
+                        aperiam fugit neque repellat amet itaque, maiores, ipsa
+                        enim architecto reiciendis obcaecati quibusdam ipsam
+                        deleniti? Deserunt odio aperiam quae ipsa soluta aut
+                        minima! Maiores facilis distinctio libero quas dolorum.
+                      </p>
+                    </div>
                   </div>
                 </div>
                 {/* video */}
@@ -1228,7 +1257,7 @@ const Properties = () => {
                 </div>
               </div>
 
-              <button className="flex items-center gap-2 bg-foreground hover:opacity-80 ms-auto px-4 lg:px-5 py-2 md:py-3 lg:py-4 rounded-[8px] w-fit text-background text-sm lg:text-base cursor-pointer">
+              <button className="flex items-center gap-2 bg-foreground hover:bg-destructive ms-auto px-4 lg:px-5 py-2 md:py-3 lg:py-4 rounded-[8px] w-fit text-background text-sm lg:text-base cursor-pointer">
                 Contact Agent
                 <svg
                   className="w-[18px] lg:w-[21px] h-[18px] lg:h-[21px]"
