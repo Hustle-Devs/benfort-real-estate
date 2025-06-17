@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Investment Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-black flex items-center justify-center p-4 md:p-8">
+  <div class="flex flex-col lg:flex-row gap-6 w-full max-w-[1200px] text-white">
+
+    <!-- Risk Selector -->
+    <div id="risk-selector" class="flex flex-col space-y-4 flex-1">
+      <div data-risk="low" class="risk-option w-full flex justify-between items-center px-4 sm:px-6 py-3 rounded-[10px] cursor-pointer text-white" style="background: #27272a;">
+        <span class="font-medium">Low Risk</span>
+        <div class="indicator w-5 h-5 rounded-full border-2 flex items-center justify-center border-white bg-transparent"></div>
+      </div>
+      <div data-risk="moderate" class="risk-option w-full flex justify-between items-center px-4 sm:px-6 py-3 rounded-[10px] cursor-pointer text-white" style="background: #27272a;">
+        <span class="font-medium">Moderate Risk</span>
+        <div class="indicator w-5 h-5 rounded-full border-2 flex items-center justify-center border-white bg-transparent"></div>
+      </div>
+      <div data-risk="high" class="risk-option w-full flex justify-between items-center px-4 sm:px-6 py-3 rounded-[10px] cursor-pointer text-white" style="background: #27272a;">
+        <span class="font-medium">High Risk</span>
+        <div class="indicator w-5 h-5 rounded-full border-2 flex items-center justify-center border-white bg-transparent"></div>
+      </div>
+      <div class="mt-4 bg-zinc-900 p-4 sm:p-5 rounded-[10px] text-gray-400 text-sm">
+        <p>Depending on the selected risk type, members can achieve varying target goals. We recommend contacting us for a tailored risk plan and expert guidance on the best strategies to align with your financial objectives.</p>
+      </div>
+    </div>
+
+    <!-- Account Size Selector -->
+    <div id="account-selector" class="flex flex-col space-y-4 flex-1"></div>
+
+    <!-- Results Display -->
+    <div id="results-display" class="flex-1 rounded-[10px] p-4 sm:p-6 md:p-8 flex flex-col text-white" style="background: linear-gradient(#00aeff, #007ef8);">
+      <!-- metrics injected here -->
+      <button id="get-started" class="mt-6 bg-[#ffffff5c] hover:bg-[#ffffff48] transition-colors text-white font-medium py-3 px-6 rounded-[10px] w-full">Get Started</button>
+    </div>
+
+  </div>
+
+  <!-- account template moved outside container -->
+  <template id="account-template">
+    <div class="account-option w-full flex justify-between items-center px-4 sm:px-6 py-3 rounded-[10px] cursor-pointer text-white bg-zinc-900">
+      <span class="badge text-xs font-medium px-3 py-1 rounded-full bg-[#c2ecfd] text-black">Account Size</span>
+      <span class="amount"></span>
+      <div class="indicator w-5 h-5 rounded-full border-2 flex items-center justify-center border-white bg-transparent"></div>
+    </div>
+  </template>
+
+  <script>
+    const state = { selectedRisk: 'low', selectedAccountSize: 1000, customAmount: '' };
+    const accountSizes = [500, 1000, 2500, 5000, 10000, 'custom'];
+    const baseData = { averageWinRate: '84%', maxOverallDrawdown: '10%', averageTradesPerMonth: 140, newsTrading: 'Yes' };
+    const gradient = 'linear-gradient(to right, #00c8ff, #007ef8)';
+    const defaultBg = '#27272a';
+
+    function calculateData() {
+      const data = { ...baseData };
+      const rate = state.selectedRisk === 'low' ? 0.08 : state.selectedRisk === 'moderate' ? 0.12 : 0.15;
+      data.percentageReturn = state.selectedRisk === 'low' ? '8%-15%' : state.selectedRisk === 'moderate' ? '12%-20%' : '15%-25%';
+      const size = state.customAmount ? parseFloat(state.customAmount) : state.selectedAccountSize;
+      data.targetedMonthlyProfits = Number((size * rate).toFixed(2));
+      data.compoundYearlyReturn = Number((data.targetedMonthlyProfits * 12 * (1 + rate / 2)).toFixed(2));
+      return data;
+    }
+
+    function renderRisk() {
+      document.querySelectorAll('.risk-option').forEach(el => {
+        const isSelected = el.dataset.risk === state.selectedRisk;
+        el.style.background = isSelected ? gradient : defaultBg;
+        el.querySelector('.indicator').innerHTML = isSelected ? '<div class="w-2.5 h-2.5 bg-white rounded-full"></div>' : '';
+      });
+    }
+
+    function bindRisk() {
+      document.querySelectorAll('.risk-option').forEach(el => {
+        el.addEventListener('click', () => {
+          state.selectedRisk = el.dataset.risk;
+          renderRisk(); renderResults();
+        });
+      });
+    }
+
+    function renderAccount() {
+      const container = document.getElementById('account-selector');
+      container.innerHTML = '';
+      const tpl = document.getElementById('account-template');
+
+      accountSizes.forEach(val => {
+        const clone = tpl.content.cloneNode(true);
+        const opt = clone.querySelector('.account-option');
+        opt.dataset.size = val;
+        opt.querySelector('.amount').textContent = val === 'custom' ? 'Enter Amount' : '£' + val.toLocaleString();
+        opt.style.background = val === state.selectedAccountSize ? gradient : defaultBg;
+        const ind = opt.querySelector('.indicator');
+        if (val === state.selectedAccountSize) ind.innerHTML = '<div class="w-2.5 h-2.5 bg-white rounded-full"></div>';
+
+        // click to select
+        opt.addEventListener('click', () => {
+          state.selectedAccountSize = val;
+          state.customAmount = '';
+          renderAccount(); renderResults();
+        });
+
+        container.appendChild(clone);
+
+        // if custom, add input below
+        if (val === 'custom' && state.selectedAccountSize === 'custom') {
+          const inputDiv = document.createElement('div');
+          inputDiv.className = 'px-4 sm:px-6';
+          const input = document.createElement('input');
+          input.type = 'text';
+          input.placeholder = 'Enter custom amount';
+          input.value = state.customAmount;
+          input.className = 'w-full bg-transparent border-b border-gray-600 pb-2 text-white outline-none mt-2';
+          input.addEventListener('input', (e) => {
+            state.customAmount = e.target.value.replace(/[^0-9.]/g, '');
+            renderResults();
+          });
+          inputDiv.appendChild(input);
+          container.appendChild(inputDiv);
+        }
+      });
+    }
+
+    function renderResults() {
+      const container = document.getElementById('results-display');
+      container.querySelectorAll('.metric-row').forEach(el => el.remove());
+      const data = calculateData();
+      const metrics = [
+        ['Average Win Rate', data.averageWinRate],
+        ['Percentage Return', data.percentageReturn],
+        ['Max Overall Drawdown', data.maxOverallDrawdown],
+        ['Average Trades Per Month', data.averageTradesPerMonth],
+        ['News Trading', data.newsTrading],
+        ['Targeted Monthly Profits', `£${data.targetedMonthlyProfits.toLocaleString('en-UK',{minimumFractionDigits:2,maximumFractionDigits:2})}`],
+        ['Compound Yearly Return', `£${data.compoundYearlyReturn.toLocaleString('en-UK',{minimumFractionDigits:2,maximumFractionDigits:2})}`]
+      ];
+
+      metrics.forEach((metric, idx) => {
+        const row = document.createElement('div');
+        row.className = `metric-row flex flex-col sm:flex-row justify-between sm:items-center py-4 ${idx < metrics.length - 1 ? 'border-b border-blue-400' : ''}`;
+        row.innerHTML = `<span>${metric[0]}</span><span class="mt-1 sm:mt-0 font-medium">${metric[1]}</span>`;
+        container.insertBefore(row, document.getElementById('get-started'));
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderRisk(); bindRisk(); renderAccount(); renderResults();
+    });
+  </script>
+</body>
+</html>

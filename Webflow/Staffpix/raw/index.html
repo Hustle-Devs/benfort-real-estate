@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Savings Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div id="calculator-card" class="card">
+      <form id="calculator-form">
+        <div class="field">
+          <label for="recruiterSalary">Average In-House Recruiter Salary (USD)</label>
+          <div class="input-icon">
+            <span class="icon">$</span>
+            <input type="text" id="recruiterSalary" name="recruiterSalary" placeholder="Enter the average annual salary" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="recruitersCount">Number of In-House Recruiters you need to hire</label>
+          <input type="number" id="recruitersCount" name="recruitersCount" min="1" placeholder="Enter number of recruiters" />
+        </div>
+        <div class="field">
+          <label for="agencySpend">Annual Recruiting Agency Spend (USD)</label>
+          <div class="input-icon">
+            <span class="icon">$</span>
+            <input type="text" id="agencySpend" name="agencySpend" placeholder="Enter annual agency spend" />
+          </div>
+        </div>
+        <button type="button" id="calculate-btn" class="btn">Calculate My Savings</button>
+      </form>
+      <div id="results" class="results hidden">
+        <div class="results-header">
+          <h2>Your Potential Savings</h2>
+          <p>Based on your current recruiting expenses</p>
+        </div>
+        <div class="result-cards">
+          <div class="result-card">
+            <h3>Current Annual Cost</h3>
+            <div class="amount" id="currentCost"></div>
+            <p class="subtitle">Including salaries, benefits, and agency fees</p>
+          </div>
+          <div class="result-card offshore">
+            <h3>Offshore Annual Cost</h3>
+            <div class="amount" id="offshoreCost"></div>
+            <p class="subtitle">Same capacity with offshore recruiters</p>
+          </div>
+        </div>
+        <div class="summary-box">
+          <p>You could save up to</p>
+          <div class="savings-amount" id="annualSavings"></div>
+          <p>per year</p>
+          <p>That's a <span id="savingsPct"></span>% reduction in recruiting costs!</p>
+        </div>
+        <button type="button" id="reset-btn" class="reset-btn">
+          <span class="arrow">&larr;</span> Recalculate
+        </button>
+      </div>
+    </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
